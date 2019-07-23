@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>POI!</title>
+		<script src="https://simplycodingcourses.com/files/simplyjs/simply.js">
+		</script>
+		<script>
+			function menu() {
+			sjs.open("target",500,500);
+			// Text
+				var welcome = new sjs.Text("POI!", 50, "black");
+					welcome.centerH();
+			//Buttons
+				var pvp = new sjs.Button("2 Pois!", function(){
+						window.location = "poing.html";
+				});
+					pvp.centerH().offset(0,100);
+				var solo = new sjs.Button("1 Poi!", function(){
+						window.location = "solopoing.html";
+				});
+					solo.centerH().offset(0,150);
+					var unpoi = new sjs.Button("Unpoi", function(){
+						window.location = "unpoiindex.html";
+					});
+						unpoi.centerH().offset(0,50);
+		} //closing
+		</script>
+	</head>
+	<body onload= "menu()">
+		<h1>POI PONG!</h1>
+		<div id="target" style="background:lightgrey;">
+		</div>
+	</body>
+</html>
