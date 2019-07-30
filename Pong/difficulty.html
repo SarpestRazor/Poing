@@ -10,18 +10,18 @@
 				var welcome = new sjs.Text("Pong!", 50, "black");
 					welcome.centerH();
 			//Buttons
-				var pvp = new sjs.Button("2 Players!", function(){
-					window.location = "pong.html";
+				var medium = new sjs.Button("Medium!", function(){
+						window.location = "medium.html";
 				});
-					pvp.centerH().offset(0,100);
-				var solo = new sjs.Button("1 Player!", function(){
-					window.location = "difficulty.html";
+					medium.centerH().offset(0,100);
+				var easy = new sjs.Button("Easy!", function(){
+						window.location = "solopong.html";
 				});
-					solo.centerH().offset(0,150);
-				var unpoi = new sjs.Button("Poi!", function(){
-					window.location = "index.html";
-				});
-					unpoi.centerH().offset(0,50);
+					easy.centerH().offset(0,150);
+					var hard = new sjs.Button("Hard!", function(){
+						window.location = "hard.html";
+					});
+						hard.centerH().offset(0,50);
 		} //closing
 		</script>
 	</head>

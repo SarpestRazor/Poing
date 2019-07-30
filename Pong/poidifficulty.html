@@ -10,21 +10,19 @@
 				var welcome = new sjs.Text("POI!", 50, "black");
 					welcome.centerH();
 			//Buttons
-				var pvp = new sjs.Button("2 Pois!", function(){
-				  window.location = "poing.html";
+				var mediumpoi = new sjs.Button("Medium Poi!", function(){
+						window.location = "mediumpoi.html";
 				});
-					pvp.centerH().offset(0,100);
-				var solo = new sjs.Button("1 Poi!", function(){
-				  window.location = "poidifficulty.html";
+					mediumpoi.centerH().offset(0,100);
+				var easypoi = new sjs.Button("Easy Poi!", function(){
+						window.location = "solopoing.html";
 				});
-					solo.centerH().offset(0,150);
-				var unpoi = new sjs.Button("Unpoi", function(){
-				  window.location = "unpoiindex.html";
+					easypoi.centerH().offset(0,150);
+					var hardpoi = new sjs.Button("Hard Poi!", function(){
+						window.location = "hardpoi.html";
 					});
-					  unpoi.centerH().offset(0,50);
+						hardpoi.centerH().offset(0,50);
 		} //closing
-		//So I just read about arrays, I want to use one, but where :woopsHmm: if I even can
-
 		</script>
 	</head>
 	<body onload= "menu()">

@@ -1,22 +1,23 @@
 <html>
 	<head>
-		<title>Pong!</title>
+		<title>Poi!</title>
 		<script
 		src="https://simplycodingcourses.com/files/simplyjs/simply.js">
 		</script>
 
 		<script>
 			function start(){
+				alert("Poi! You are the blue paddle, Poi!");
 				sjs.open("target", 500, 700);
 			//Ball
-				var ball = new sjs.Image("Images/spike.png");
+				var ball = new sjs.Image("Images/Poi.png");
 					ball.type = "ball";
 					ball.setSize(100,100);
 			 		ball.center();
 			 		ball.friction = 0;
 			 		ball.bounce();
-			 		ball.pushRight(3);
-			 		ball.pushUp(4);
+			 		ball.pushRight(5);
+			 		ball.pushUp(6);
 			 			//Reset of ball and points
 			 			var scorered = 0;
 			 			var scoreblue = 0;
@@ -42,12 +43,13 @@
 			 		paddle1.setSize(100,20);
 			 		paddle1.offset(-50,100);
 			 		//Controls
-			 			sjs.keyDown(LEFT_KEY, function(){
-			 				paddle1.pushLeft()
-			 			});
-			 			sjs.keyDown(RIGHT_KEY, function(){
-			 				paddle1.pushRight();
-			 			});
+			 			setInterval(function(){
+			 				if(ball.x > paddle1.x){
+			 					paddle1.pushRight();
+			 				} else {
+			 					paddle1.pushLeft();
+			 				}
+			 			},30);
 			 //Blue Paddle
 			 	var paddle2 = new sjs.Image("Images/blue.png");
 			 		paddle2.type = "paddle";
@@ -64,7 +66,7 @@
 
 			//Collision
 				//Audio
-					var soundEffect = new Audio('Music/techno.mp3');
+					var soundEffect = new Audio('Music/kc144v26.mp3');
 
 				sjs.onHit("ball", "paddle", function (ball,paddle,ballRight,ballUp){
 					sjs.bounceOff(ball,paddle);
@@ -72,7 +74,7 @@
 				});
 			//Back button
 					var backBtn = new sjs.Button("Back to menu", function(){
-						window.location = "unpoiindex.html";
+						window.location = "index.html";
 					});
 					backBtn.centerH().right();
 
@@ -81,7 +83,7 @@
 		</script>
 	</head>
 	<body onload="start()">
-		<h1> Pong! </h1>
+		<h1> Poi! </h1>
 		<div id="target" style="background:lightgrey;">
 		</div>
 	</body>

@@ -7,6 +7,7 @@
 
 		<script>
 			function start(){
+				alert("You are the blue paddle!");
 				sjs.open("target", 500, 700);
 			//Ball
 				var ball = new sjs.Image("Images/spike.png");
@@ -15,8 +16,8 @@
 			 		ball.center();
 			 		ball.friction = 0;
 			 		ball.bounce();
-			 		ball.pushRight(3);
-			 		ball.pushUp(4);
+			 		ball.pushRight(5);
+			 		ball.pushUp(6);
 			 			//Reset of ball and points
 			 			var scorered = 0;
 			 			var scoreblue = 0;
@@ -42,12 +43,13 @@
 			 		paddle1.setSize(100,20);
 			 		paddle1.offset(-50,100);
 			 		//Controls
-			 			sjs.keyDown(LEFT_KEY, function(){
-			 				paddle1.pushLeft()
-			 			});
-			 			sjs.keyDown(RIGHT_KEY, function(){
-			 				paddle1.pushRight();
-			 			});
+			 			setInterval(function(){
+			 				if(ball.x > paddle1.x){
+			 					paddle1.pushRight();
+			 				} else {
+			 					paddle1.pushLeft();
+			 				}
+			 			},30);
 			 //Blue Paddle
 			 	var paddle2 = new sjs.Image("Images/blue.png");
 			 		paddle2.type = "paddle";
